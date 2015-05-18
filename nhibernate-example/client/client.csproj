@@ -82,6 +82,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Project>{baca3a60-512b-40fd-86e5-f9a02bff1a07}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\infrastructure\infrastructure.csproj">
+      <Project>{c055f6e6-5598-44c9-991a-0ba298327a2c}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\maps\maps.csproj">
+      <Project>{fe21bfff-9e68-4c5d-b606-aacfc44b8f0a}</Project>
+      <Name>maps</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

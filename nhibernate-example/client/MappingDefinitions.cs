@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 using Ninject;
 using Ninject.Modules;
-using Ninject.Parameters;
 
+using infrastructure.dependencyResolution;
 
-namespace Cac.Transform.SEM
+namespace client
 {
     /// <summary>
     /// Defines the mappings for interfaces to objects for Ninject
@@ -42,10 +38,7 @@ namespace Cac.Transform.SEM
             };
 
             kernel.Load(modules);
-
-            kernel.Bind<IApplicationContext>().To<SystemApplicationContext>();
-            kernel.Bind<ILookupService>().To<LookupService>();
-            
+           
         }        
     }
 }

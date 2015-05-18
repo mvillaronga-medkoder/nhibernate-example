@@ -16,11 +16,14 @@ namespace client
 {
     public partial class Form1 : Form
     {
+        IKernel _kernel = null;
+
         public Form1()
         {
             InitializeComponent();
 
             //run mapping and startup code
+            _kernel = MappingDefinitions.CreateKernel();
 
         }
     }
