@@ -17,7 +17,7 @@ namespace infrastructure.services
             get
             {
                 string conString = null;
-                var settings = ConfigurationManager.ConnectionStrings["MedKoder"];
+                var settings = ConfigurationManager.ConnectionStrings["DbConString"];
                 if (settings != null)
                 {
                     conString = settings.ConnectionString;
