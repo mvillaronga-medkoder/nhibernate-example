@@ -5,7 +5,7 @@ using System.Linq;
 using infrastructure.interfaces;
 
 
-namespace MedKoder.Infrastructure.Data.Services
+namespace infrastructure.services
 {
     public class ConfigService : IConfigService
     {

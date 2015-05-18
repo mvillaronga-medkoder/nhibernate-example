@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Ninject;
+using Ninject.Modules;
+using Ninject.Parameters;
+
 namespace client
 {
     public partial class Form1 : Form
@@ -15,6 +19,9 @@ namespace client
         public Form1()
         {
             InitializeComponent();
+
+            //run mapping and startup code
+
         }
     }
 }

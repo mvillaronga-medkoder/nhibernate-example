@@ -26,6 +26,11 @@ namespace domain
             return string.Format("{0} CC payment for {1} with number {2} exp {4}", CardType, CardholderName, CardNumber, ExpiryDate);
         }
 
+        public static string DiscriminatorDefinition()
+        {
+            return "CREDIT_CARD_PAYMENT";
+        }
+
 
         #endregion
     }

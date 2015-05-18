@@ -22,6 +22,11 @@ namespace domain
             return string.Format("PayPal Payment by {0} ", AccountName);
         }
 
+        public static string DiscriminatorDefinition()
+        {
+            return "PAY_PAL_PAYMENT";
+        }
+
 
         #endregion
     }
