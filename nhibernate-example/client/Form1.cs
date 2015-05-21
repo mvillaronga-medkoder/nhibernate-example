@@ -43,7 +43,7 @@ namespace client
         {
             var repoFac = _kernel.Get<IRepositoryFactory>();
             var repo = repoFac.getRepository();
-            Order order = repo.Query<Order>().Where(x => x.Payment.Description == paymentType).FirstOrDefault();
+            Order order = repo.Query<Order>().Where(x => x.PaymentType == paymentType).FirstOrDefault();
             if (order != null)
                 MessageBox.Show(order.Payment.PaymentDetails());
             else

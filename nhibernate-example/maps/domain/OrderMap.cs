@@ -8,8 +8,10 @@ namespace maps
     {
         public OrderMap()
         {
-            Table("Order");
+            Table("Orders");
             LazyLoad();
+
+            Map(x => x.PaymentType).Column("PaymentType");
 
             Id(x => x.Id).Column("OrderId")
                 .GeneratedBy.Identity()

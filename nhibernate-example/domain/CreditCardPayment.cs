@@ -28,7 +28,7 @@ namespace domain
 
         public static string DiscriminatorDefinition()
         {
-            return "CREDIT_CARD_PAYMENT";
+            return "CreditCardPayment";
         }
 
 

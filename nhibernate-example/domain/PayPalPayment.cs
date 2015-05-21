@@ -24,7 +24,7 @@ namespace domain
 
         public static string DiscriminatorDefinition()
         {
-            return "PAY_PAL_PAYMENT";
+            return "PayPalPayment";
         }
 
 

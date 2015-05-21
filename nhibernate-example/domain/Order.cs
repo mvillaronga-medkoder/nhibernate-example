@@ -16,8 +16,9 @@ namespace domain
     
         public virtual int Id { get; protected set; }
         public virtual int ReferenceNumber { get; set; }
-        public virtual IEnumerable<OrderItem> Items { get; set; }
+        public virtual IList<OrderItem> Items { get; set; }
         public virtual IPaymentType Payment { get; set; }
 
+        public virtual string PaymentType { get; set; }
     }
 }

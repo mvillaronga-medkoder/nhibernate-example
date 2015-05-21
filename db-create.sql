@@ -16,7 +16,7 @@ CREATE TABLE `item` (
   PRIMARY KEY (`ItemId`),
   UNIQUE KEY `ItemId_UNIQUE` (`ItemId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `OrderId` int(11) NOT NULL AUTO_INCREMENT,
   `PaymentType` varchar(45) DEFAULT NULL,
   `PaymentId` varchar(45) DEFAULT NULL,
