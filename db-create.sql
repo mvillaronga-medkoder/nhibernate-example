@@ -1,6 +1,6 @@
 CREATE DATABASE `nhibernate-example` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-creditcardpaymentCardNumberCardNumberPayPalPaymentIdCREATE TABLE `creditcardpayment` (
+CREATE TABLE `creditcardpayment` (
   `CreditCardPaymentId` int(11) NOT NULL AUTO_INCREMENT,
   `CardholderName` varchar(45) DEFAULT NULL,
   `CardNumber` varchar(45) DEFAULT NULL,
