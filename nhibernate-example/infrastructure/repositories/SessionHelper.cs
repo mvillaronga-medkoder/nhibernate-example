@@ -26,7 +26,8 @@ namespace infrastructure.repositories
 
         #region Constructors
 
-        public SessionHelper(string connectionString, SessionType type = SessionType.MySql)
+        //public SessionHelper(string connectionString, SessionType type = SessionType.MySql)
+        public SessionHelper(string connectionString, SessionType type = SessionType.LocalSql)
         {
             SessionType = type;
             _connectionString = connectionString;
@@ -76,14 +77,31 @@ namespace infrastructure.repositories
                 case SessionType.MySql:
                     InitializeSessionFactory_MySql(conStr);
                     break;
-                //case SessionType.SqlLite_Memory:
-                //    InitializeSessionFactory_SqlLite_Memory();
-                //    break;
+                case SessionType.LocalSql:
+                    InitializeSessionFactory_LocalSql(conStr);
+                    break;
                 default:
                     throw new ApplicationException(string.Format("Unable to initialize SessionFactory.  Unknown SessionType passed: {0}",
                                                                     Enum.GetName(typeof(SessionType), SessionHelper.SessionType)));
             }
         }
+
+        private static void InitializeSessionFactory_LocalSql(string conStr)
+        {
+            c_sessionFactory = Fluently.Configure()
+                .Database(MsSqlConfiguration.MsSql2012
+                    .ConnectionString(conStr)
+                    .ShowSql()
+                )
+
+                // reference the assembly of a class that will pull in all the mappings
+                .Mappings(m => m.FluentMappings
+                    .AddFromAssemblyOf<ItemMap>()
+                   )
+
+                .BuildSessionFactory();
+        }
+
 
         /// <summary>
         /// Creates a session linked to a physical DB described by the connection string parameter
@@ -116,7 +134,8 @@ namespace infrastructure.repositories
     {
         Sql_Physical,
         SqlLite_Memory,
-        MySql
+        MySql,
+        LocalSql
     }
 
 }

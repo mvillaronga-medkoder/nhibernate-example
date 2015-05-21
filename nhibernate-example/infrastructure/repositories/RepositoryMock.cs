@@ -154,7 +154,7 @@ namespace infrastructure.repositories
             //this space intentionally left blank
         }
 
-        public void restoreSession(string conString)
+        public void restoreSession(string conString, SessionType st)
         {
             //this space intentionally left blank
         }

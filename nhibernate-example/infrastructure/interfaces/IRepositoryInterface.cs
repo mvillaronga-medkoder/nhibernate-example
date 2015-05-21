@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 
+using infrastructure.repositories;
+
 namespace infrastructure.interfaces
 {
     public interface IRepository : IDisposable
@@ -32,6 +34,6 @@ namespace infrastructure.interfaces
         /// refreshSession.  Creates a new session object if the existing session has been disposed of.
         /// </summary>
         /// <param name="connectionString">Connection string for the SessionHelper object to create</param>
-        void restoreSession(string conString);
+        void restoreSession(string conString, SessionType st);
     }
 }

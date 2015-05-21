@@ -27,9 +27,9 @@ namespace infrastructure.repositories
         /// <summary>
         /// Default constructor
         /// </summary>
-        public NHibernateRepository(string connectionString)
+        public NHibernateRepository(string connectionString, SessionType st)
         {
-            _session = new SessionHelper(connectionString).OpenSession();
+            _session = new SessionHelper(connectionString, st).OpenSession();
         }
 
         /// <summary>
@@ -188,17 +188,17 @@ namespace infrastructure.repositories
 
         #region Helper Members
 
-        public void restoreSession(string conString)
+        public void restoreSession(string conString, SessionType st)
         {
             if (null == _session)
             {
-                _session = new SessionHelper(conString).OpenSession();
+                _session = new SessionHelper(conString, st).OpenSession();
             }
             else
             {
                 if (!_session.IsOpen)
                 {
-                    _session = new SessionHelper(conString).OpenSession();
+                    _session = new SessionHelper(conString, st).OpenSession();
                 }
 
             }

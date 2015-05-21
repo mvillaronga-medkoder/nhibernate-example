@@ -1,4 +1,6 @@
-﻿using infrastructure.interfaces;
+﻿using System;
+
+using infrastructure.interfaces;
 
 namespace infrastructure.repositories
 {
@@ -27,13 +29,37 @@ namespace infrastructure.repositories
 
         public IRepository getRepository()
         {
+
+            //pic the DB connection type from the config
+            SessionType st = SessionType.MySql;
+            if (_config.containsKey("DbType"))
+            {
+                string dbType = _config.getValue("DbType");
+                switch (dbType)
+                {
+                    case "MSSQL":
+                        st = SessionType.LocalSql;
+                        break;
+                    case "MYSQL":
+                        st = SessionType.MySql;
+                        break;
+                    default:
+                        throw new ApplicationException(string.Format("Unknown DB Type defined: {0}", dbType));
+                }
+            }
+            else {
+                throw new ApplicationException("Application configuration for DB Type required.");
+            }
+        
+
             if (null == _repo)
             {
-                _repo = new NHibernateRepository(_config.DbConnectionString);
+                //create the repo
+                _repo = new NHibernateRepository(_config.DbConnectionString, st);
             }
             else
             {
-                _repo.restoreSession(_config.DbConnectionString);
+                _repo.restoreSession(_config.DbConnectionString, st);
             }
 
             
