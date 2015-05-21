@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace domain
 {
@@ -22,5 +20,18 @@ namespace domain
                 return Item.Price * Quantity;
             }
         }
+
+        public virtual string details()
+        {
+            StringBuilder ret = new StringBuilder("");
+
+            ret = ret.Append(Quantity).Append("\t");
+            ret = ret.Append(Item.Name).Append("\t");
+            ret = ret.Append(Item.Price).Append("\t");
+            ret = ret.Append(TotalPrice);
+
+            return ret.ToString();
+        }
+
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace domain
 {
@@ -19,11 +17,18 @@ namespace domain
         public virtual IList<OrderItem> Items { get; set; }
         public virtual IPaymentType Payment { get; set; }
 
-        public virtual string PaymentType { get; set; }
+        public virtual string PaymentType { get; protected set; }
 
         public virtual string showDetails()
         {
-            return string.Format("Reference Number:{0}\r\nPayment Details:\r\n", ReferenceNumber, Payment.PaymentDetails());
+            StringBuilder ret = new StringBuilder("");
+
+            ret.Append("Reference Number:").Append(ReferenceNumber).AppendLine("");
+            ret.Append("Payment Details:").Append(Payment.PaymentDetails()).AppendLine("");
+            foreach (OrderItem oi in Items)
+                ret.AppendLine(oi.details());
+
+            return ret.ToString();
         }
     }
 }

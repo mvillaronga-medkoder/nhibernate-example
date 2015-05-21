@@ -11,7 +11,8 @@ namespace maps
             Table("Orders");
             LazyLoad();
 
-            Map(x => x.PaymentType).Column("PaymentType");
+            Map(x => x.ReferenceNumber).Column("ReferenceNumber");
+            Map(x => x.PaymentType).Column("PaymentType").ReadOnly();
 
             Id(x => x.Id).Column("OrderId")
                 .GeneratedBy.Identity()
@@ -27,7 +28,7 @@ namespace maps
                 .IdentityType<int>()
                 .AddMetaValue<CreditCardPayment>(CreditCardPayment.DiscriminatorDefinition())
                 .AddMetaValue<PayPalPayment>(PayPalPayment.DiscriminatorDefinition())
-                .Cascade.None();
+                .Cascade.All();
         }
     }
 }

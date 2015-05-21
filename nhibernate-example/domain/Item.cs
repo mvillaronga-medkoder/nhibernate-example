@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace domain
 {
@@ -10,5 +8,15 @@ namespace domain
         public virtual double Price { get; set; }
         public virtual string Name { get; set; }
         public virtual int ItemId { get; set; }
+
+        public virtual string showDetails()
+        {
+            StringBuilder ret = new StringBuilder("");
+
+            ret = ret.Append(Name).Append("\t");
+            ret = ret.Append(Price).Append("\t");
+
+            return ret.ToString();
+        }
     }
 }
