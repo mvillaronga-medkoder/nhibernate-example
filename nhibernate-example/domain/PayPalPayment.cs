@@ -7,17 +7,17 @@ namespace domain
 {
     public class PayPalPayment : IPaymentType
     {
-        public int ID { get; protected set; }
-        public string AccountName { get; set; }
+        public virtual int ID { get; protected set; }
+        public virtual string AccountName { get; set; }
 
         #region IPaymentType Implementation
 
-        public string Description
+        public virtual string Description
         {
             get { return "PayPal"; }
         }
 
-        public string PaymentDetails()
+        public virtual string PaymentDetails()
         {
             return string.Format("PayPal Payment by {0} ", AccountName);
         }

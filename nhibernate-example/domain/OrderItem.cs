@@ -7,12 +7,12 @@ namespace domain
 {
     public class OrderItem
     {
-        public int Id { get; set; }
-        public Order Order { get; set; }
-        public Item Item { get; set; }
-        public int Quantity { get; set; }
+        public virtual int Id { get; set; }
+        public virtual Order Order { get; set; }
+        public virtual Item Item { get; set; }
+        public virtual int Quantity { get; set; }
 
-        public double TotalPrice
+        public virtual double TotalPrice
         {
             get
             {

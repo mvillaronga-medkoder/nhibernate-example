@@ -14,10 +14,10 @@ namespace domain
             Items = new List<OrderItem>();
         }
     
-        public int Id { get; protected set; }
-        public int ReferenceNumber { get; set; }
-        public IEnumerable<OrderItem> Items { get; set; }
-        public IPaymentType Payment { get; set; }
+        public virtual int Id { get; protected set; }
+        public virtual int ReferenceNumber { get; set; }
+        public virtual IEnumerable<OrderItem> Items { get; set; }
+        public virtual IPaymentType Payment { get; set; }
 
     }
 }

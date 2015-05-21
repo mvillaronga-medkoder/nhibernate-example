@@ -59,5 +59,15 @@ namespace client.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap o78k5fogx5g3hdy6peai {
+            get {
+                object obj = ResourceManager.GetObject("o78k5fogx5g3hdy6peai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

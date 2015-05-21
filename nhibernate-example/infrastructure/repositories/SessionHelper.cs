@@ -20,13 +20,13 @@ namespace infrastructure.repositories
 
         private static ISessionFactory c_sessionFactory;
         private string _connectionString;
-        private static SessionType c_sessionType = SessionType.Sql_Physical;
+        private static SessionType c_sessionType = SessionType.MySql;
 
         #endregion
 
         #region Constructors
 
-        public SessionHelper(string connectionString, SessionType type = SessionType.Sql_Physical)
+        public SessionHelper(string connectionString, SessionType type = SessionType.MySql)
         {
             SessionType = type;
             _connectionString = connectionString;

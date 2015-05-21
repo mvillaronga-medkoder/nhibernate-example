@@ -11,7 +11,7 @@ namespace maps.domain
             Table("item");
             LazyLoad();
 
-            Id(x => x.Name).Column("ItemId")
+            Id(x => x.ItemId).Column("ItemId")
                 .GeneratedBy.Identity();
             Map(x => x.Name).Column("itemname")
                 .Not.Nullable();
