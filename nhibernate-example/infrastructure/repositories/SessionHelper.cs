@@ -94,7 +94,7 @@ namespace infrastructure.repositories
             c_sessionFactory = Fluently.Configure()
                 .Database(MySQLConfiguration.Standard
                     .ConnectionString(connectionString)
-                    //.ShowSql()
+                    .ShowSql()
                 )
 
                 // reference the assembly of a class that will pull in all the mappings

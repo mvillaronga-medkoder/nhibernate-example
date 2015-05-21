@@ -31,12 +31,12 @@ namespace client
 
         private void btnCC_Click(object sender, EventArgs e)
         {
-            showPaymentDetails("Credit Card");
+            showPaymentDetails(CreditCardPayment.DiscriminatorDefinition());
         }
 
         private void btnPaypal_Click(object sender, EventArgs e)
         {
-            showPaymentDetails("PayPal");
+            showPaymentDetails(PayPalPayment.DiscriminatorDefinition());
         }
 
         private void showPaymentDetails(string paymentType)

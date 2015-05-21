@@ -13,12 +13,17 @@ namespace domain
         public Order() {
             Items = new List<OrderItem>();
         }
-    
+
         public virtual int Id { get; protected set; }
         public virtual int ReferenceNumber { get; set; }
         public virtual IList<OrderItem> Items { get; set; }
         public virtual IPaymentType Payment { get; set; }
 
         public virtual string PaymentType { get; set; }
+
+        public virtual string showDetails()
+        {
+            return string.Format("Reference Number:{0}\r\nPayment Details:\r\n", ReferenceNumber, Payment.PaymentDetails());
+        }
     }
 }

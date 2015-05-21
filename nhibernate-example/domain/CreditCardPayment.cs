@@ -23,7 +23,7 @@ namespace domain
 
         public virtual string PaymentDetails()
         {
-            return string.Format("{0} CC payment for {1} with number {2} exp {4}", CardType, CardholderName, CardNumber, ExpiryDate);
+            return string.Format("{0} CC payment for {1} with number {2} exp {3}", CardType, CardholderName, CardNumber, ExpiryDate);
         }
 
         public static string DiscriminatorDefinition()

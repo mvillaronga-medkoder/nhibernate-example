@@ -11,7 +11,7 @@ namespace maps.domain
             Table("creditcardpayment");
             LazyLoad();
 
-            Id(x => x.Id).Column("Id")
+            Id(x => x.Id).Column("CreditCardPaymentId")
                 .GeneratedBy.Identity()
                 .Unique();
 
