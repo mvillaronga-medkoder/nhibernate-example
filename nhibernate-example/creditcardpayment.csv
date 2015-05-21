@@ -1,0 +1,2 @@
+CreditCardPaymentId,CardholderName,CardNumber,CardType,ExpiryDate
+1,Bob,12345,Visa,2008-07-04
